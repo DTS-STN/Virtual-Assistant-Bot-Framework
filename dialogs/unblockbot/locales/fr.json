@@ -10,7 +10,7 @@
 	"confirmLookIntoStepErrorMsg": "Désolé Mary, Je ne suis pas capable de vous aider avec cela. Si vous voulez planifié un appel avec un de nos agents, vous pouvez accéder a notre service de rappel ici: [insérer le lien lici]",
 	"confirmLookIntoStepStandardPromptOptions": [
 		"Oui",
-		"Non merci"
+		"Non"
 	],
 	"confirmLookIntoStepCloseMsg": "D'accord, pas de problème. Dites-le-moi si vous changez d'avis!",
 
@@ -32,8 +32,8 @@
     "confirmNotifyROEReceivedStepRetryMsg": "Désolé, Voulez-vous que je vous informe lorsque nous aurons reçu le relevé d'emploi?",
     "confirmNotifyROEReceivedStepErrorMsg": "Désolé Mary, Je ne suis pas capable de vous aider avec cela. Si vous voulez planifié un appel avec un de nos agents, vous pouvez accéder a notre service de rappel ici: [insérer le lien lici]",
     "confirmNotifyROEReceivedStepStandardPromptOptions": [
-        "Oui, informez-moi",
-        "Non, ne m'informez pas"
+        "Oui",
+        "Non"
     ],
     "confirmNotifyROEReceivedStepCloseMsg": "FROk, no problem!",
 
