@@ -18,7 +18,7 @@ const {
 const { UnblockBotDetails } = require('./unblockBotDetails');
 
 // This is for the i18n stuff
-const { i18n, setLocale } = require('./locales/i18nConfig');
+const { i18n } = require('./locales/i18nConfig');
 
 
 const CHOICE_PROMPT = 'CHOICE_PROMPT';
@@ -67,8 +67,6 @@ class MainDialog extends ComponentDialog {
      * Initial step in the waterfall. This will kick of the unblockbot dialog
      */
     async initialStep(stepContext) {
-         // This sets the i18n local in a helper function 
-         setLocale(stepContext.context.activity.locale);
 
         const unblockBotDetails = new UnblockBotDetails();
         return await stepContext.beginDialog(UNBLOCK_BOT_DIALOG, unblockBotDetails);

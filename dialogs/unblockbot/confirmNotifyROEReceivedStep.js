@@ -8,7 +8,7 @@ const {
 const { LuisRecognizer } = require('botbuilder-ai');
 
 // This is for the i18n stuff
-const { i18n, setLocale } = require('./locales/i18nConfig');
+const { i18n } = require('./locales/i18nConfig');
 
 const TEXT_PROMPT = 'TEXT_PROMPT';
 const CONFIRM_NOTIFY_ROE_RECEIVED_STEP = 'CONFIRM_NOTIFY_ROE_RECEIVED_STEP';

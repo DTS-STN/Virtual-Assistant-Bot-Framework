@@ -10,7 +10,7 @@ const { ConfirmNotifyROEReceivedStep, CONFIRM_NOTIFY_ROE_RECEIVED_STEP } = requi
 const { GetPreferredMethodOfContactStep, GET_PREFFERED_METHOD_OF_CONTACT_STEP } = require('./getPreferredMethodOfContactStep');
 
 // This is for the i18n stuff
-const { i18n, setLocale } = require('./locales/i18nConfig');
+const { i18n } = require('./locales/i18nConfig');
 
 const UNBLOCK_BOT_DIALOG = 'UNBLOCK_BOT_DIALOG';
 const MAIN_UNBLOCK_BOT_WATERFALL_DIALOG = 'MAIN_UNBLOCK_BOT_WATERFALL_DIALOG';
@@ -50,9 +50,6 @@ class UnblockBotDialog extends ComponentDialog {
 
         // Get the unblockbot details / state machine for the current user
         const unblockBotDetails = stepContext.options;
-
-        // This sets the i18n local in a helper function 
-        setLocale(stepContext.context.activity.locale);
          
         const welcomeMsg = i18n.__('unBlockBotDialogWelcomeMsg');
 
