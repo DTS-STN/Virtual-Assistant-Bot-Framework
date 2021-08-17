@@ -39,7 +39,7 @@
 
     "getPreferredMethodOfContactStepStandardMsg": "What's the best way to reach you? I can do email or text message (or both).",
     "getPreferredMethodOfContactStepRetryMsg": "Sorry, do you prefer email or text or both?",
-    "getPreferredMethodOfContactStepSendEmailMsg": "Ok, we'll email you at mary@fakeaddress.com once we gotten your Record of Employment.",
+    "getPreferredMethodOfContactStepSendEmailMsg": "Ok, we'll email you at mary@fakeaddress.com once we've gotten your Record of Employment.",
     "getPreferredMethodOfContactStepSendTextMsg": "Ok, I'll text you at 123-456-7890 once we've gotten your Record of Employment.",
     "getPreferredMethodOfContactStepSendBothMsg": "Ok, I'll email you at mary@fakeaddress.com, and text you at 123-456-7890 once we've gotten your Record of Employment.",
     "getPreferredMethodOfContactStepStandardPromptOptions": [
