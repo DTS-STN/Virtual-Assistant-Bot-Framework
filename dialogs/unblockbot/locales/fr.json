@@ -25,7 +25,7 @@
     "confirmSendEmailStepCloseMsg": "D'accord, pas de problème. Dites-le-moi si vous changez d'avis!",
 
     "getAndSendEmailStepStandardMsg": "D'accord, à quelle adresse de courrier électronique dois-je l'envoyer?",
-    "getAndSendEmailStepRetryMsg": "Désolé, voulez-vous que j'envoie un courriel à votre ancien employeur?",
+    "getAndSendEmailStepRetryMsg": "Format d'e-mail non valide, veuillez réessayer.",
     "getAndSendEmailStepConfirmMsg": "D'accord, c'est envoyé!",
 
     "confirmNotifyROEReceivedStepStandardMsg": "Voulez-vous que je vous informe lorsque nous aurons reçu le relevé d'emploi?",
