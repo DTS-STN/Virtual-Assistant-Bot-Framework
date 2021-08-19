@@ -8,7 +8,6 @@
   "scripts": {
     "start": "node ./index.js",
     "watch": "nodemon ./index.js",
-    "lint": "eslint .",
     "test": "echo \"Error: no test specified\"",
     "prettier:fix": "prettier --write .",
     "prettier:check": "prettier --check ."
@@ -44,7 +43,7 @@
     }
   },
   "lint-staged": {
-    "*": [
+    "*.{js,jsx,ts,tsx,json,md}": [
       "prettier --write"
     ]
   }
