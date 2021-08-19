@@ -9,8 +9,8 @@
     "start": "node ./index.js",
     "watch": "nodemon ./index.js",
     "test": "echo \"Error: no test specified\"",
-    "prettier:fix": "prettier --write .",
-    "prettier:check": "prettier --check ."
+    "lint": "prettier --write .",
+    "lint:formatting": "prettier --check ."
   },
   "repository": {
     "type": "git",
