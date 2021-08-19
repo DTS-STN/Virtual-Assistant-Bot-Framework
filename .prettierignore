@@ -1,0 +1,7 @@
+node_modules/
+build/
+package.json
+package-lock.json
+README.md
+settings.json
+deploymentTemplates/
