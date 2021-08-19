@@ -14,13 +14,12 @@ const restify = require("restify");
 // Import required bot services.
 // See https://aka.ms/bot-services to learn more about the different parts of a bot.
 const {
-            BotFrameworkAdapter,
+      BotFrameworkAdapter,
   ConversationState,
   MemoryStorage,
   UserState,
 } = require("botbuilder");
 const { DialogSet } = require("botbuilder-dialogs");
-   let ejhsdjh= "dd";
 
 // This bot's main dialog.
 const { VirtualAssistantBot } = require("./bot/virtualAssistantBot");
