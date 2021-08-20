@@ -1,4 +1,5 @@
 const { ActivityHandler, MessageFactory } = require('botbuilder');
+const { setLocale } = require('../dialogs/unblockbot/locales/i18nConfig');
 // const { WaterfallDialog, WaterfallStepContext, ChoicePrompt, TextPrompt, DialogTurnStatus } = require('botbuilder-dialogs');
 const { MainDialog } = require('../dialogs/unblockbot/mainDialog');
 
@@ -31,8 +32,9 @@ class VirtualAssistantBot extends ActivityHandler {
         
 
         this.onMembersAdded(async (context, next) => {
-            console.log('Running dialog with Message Activity.');
+            console.log('MEMBER ADDED: Running dialog with Message Activity.');
 
+            setLocale(context.activity.locale);
             // Send greeting and then activate dialog
             // await context.sendActivity(`Hi Mary, I’m your virtual concierge!`);
 
@@ -45,7 +47,8 @@ class VirtualAssistantBot extends ActivityHandler {
 
         this.onMessage(async (context, next) => {
             
-            console.log('Running dialog with Message Activity.');
+            console.log('ON MESSAGE: Running dialog with Message Activity.');
+            setLocale(context.activity.locale);
 
             // Run the Dialog with the new message Activity.
             await this.dialog.run(context, this.dialogState);

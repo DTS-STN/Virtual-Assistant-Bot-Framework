@@ -8,7 +8,7 @@ const {
 const { LuisRecognizer } = require('botbuilder-ai');
 
 // This is for the i18n stuff
-const { i18n, setLocale } = require('./locales/i18nConfig');
+const { i18n } = require('./locales/i18nConfig');
 
 const TEXT_PROMPT = 'TEXT_PROMPT';
 const GET_PREFFERED_METHOD_OF_CONTACT_STEP = 'GET_PREFFERED_METHOD_OF_CONTACT_STEP';
@@ -45,9 +45,6 @@ class GetPreferredMethodOfContactStep extends ComponentDialog {
     async initialStep(stepContext) {
         // Get the user details / state machine
         const unblockBotDetails = stepContext.options;
-
-         // This sets the i18n local in a helper function 
-         setLocale(stepContext.context.activity.locale);
 
         // DEBUG
         // console.log('DEBUG UNBLOCKBOTDETAILS:', unblockBotDetails);

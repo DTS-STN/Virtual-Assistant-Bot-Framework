@@ -8,7 +8,7 @@ const {
 const { LuisRecognizer } = require('botbuilder-ai');
 
 // This is for the i18n stuff
-const { i18n, setLocale } = require('./locales/i18nConfig');
+const { i18n } = require('./locales/i18nConfig');
 
 const TEXT_PROMPT = 'TEXT_PROMPT';
 const CONFIRM_LOOK_INTO_STEP = 'CONFIRM_LOOK_INTO_STEP';
@@ -46,9 +46,6 @@ class ConfirmLookIntoStep extends ComponentDialog {
     async initialStep(stepContext) {
         // Get the user details / state machine
         const unblockBotDetails = stepContext.options;
-
-        // This sets the i18n local in a helper function 
-        setLocale(stepContext.context.activity.locale);
 
         // DEBUG
         // console.log('DEBUG UNBLOCKBOTDETAILS:', unblockBotDetails);
