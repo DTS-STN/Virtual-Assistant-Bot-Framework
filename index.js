@@ -13,6 +13,7 @@ const restify = require("restify");
 
 // Import required bot services.
 // See https://aka.ms/bot-services to learn more about the different parts of a bot.
+let test = 0;
 const {
   BotFrameworkAdapter,
   ConversationState,
