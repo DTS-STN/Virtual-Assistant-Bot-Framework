@@ -1,36 +1,50 @@
 {
-    "name": "echobot",
-    "version": "1.0.0",
-    "description": "Bot Builder v4 echo bot sample",
-    "author": "Microsoft",
-    "license": "MIT",
-    "main": "index.js",
-    "scripts": {
-        "start": "node ./index.js",
-        "watch": "nodemon ./index.js",
-        "lint": "eslint .",
-        "test": "echo \"Error: no test specified\""
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/DTS-STN/Virtual-Assistant-Bot-Framework"
-    },
-    "dependencies": {
-        "botbuilder": "~4.14.1",
-        "botbuilder-ai": "~4.14.1",
-        "botbuilder-dialogs": "~4.14.1",
-        "dotenv": "^10.0.0",
-        "i18n": "^0.13.3",
-        "path": "^0.12.7",
-        "restify": "~8.5.1"
-    },
-    "devDependencies": {
-        "eslint": "^7.32.0",
-        "eslint-config-standard": "^16.0.3",
-        "eslint-plugin-import": "^2.24.0",
-        "eslint-plugin-node": "^11.1.0",
-        "eslint-plugin-promise": "^5.1.0",
-        "eslint-plugin-standard": "^5.0.0",
-        "nodemon": "~2.0.12"
+  "name": "echobot",
+  "version": "1.0.0",
+  "description": "Bot Builder v4 echo bot sample",
+  "author": "Microsoft",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "watch": "nodemon ./index.js",
+    "test": "echo \"Error: no test specified\"",
+    "lint": "prettier --write .",
+    "lint:formatting": "prettier --check ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DTS-STN/Virtual-Assistant-Bot-Framework"
+  },
+  "dependencies": {
+    "botbuilder": "~4.14.1",
+    "botbuilder-ai": "~4.14.1",
+    "botbuilder-dialogs": "~4.14.1",
+    "dotenv": "^10.0.0",
+    "i18n": "^0.13.3",
+    "path": "^0.12.7",
+    "restify": "~8.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.4",
+    "nodemon": "~2.0.12",
+    "prettier": "2.3.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,md}": [
+      "prettier --write"
+    ]
+  }
 }
