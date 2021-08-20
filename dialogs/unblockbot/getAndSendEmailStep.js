@@ -29,7 +29,6 @@ class GetAndSendEmailStep extends ComponentDialog {
 
     this.initialDialogId = GET_AND_SEND_EMAIL_WATERFALL_STEP;
   }
-
   /**
    * Kick off the dialog by asking for an email address
    *
@@ -63,7 +62,7 @@ class GetAndSendEmailStep extends ComponentDialog {
       unblockBotDetails.getAndSendEmailStep === -1
     ) {
       // Setup the prompt message
-      var promptMsg = "";
+      let promptMsg = "";
 
       // The current step is an error state
       if (unblockBotDetails.getAndSendEmailStep === -1) {
@@ -73,9 +72,8 @@ class GetAndSendEmailStep extends ComponentDialog {
       }
 
       return await stepContext.prompt(TEXT_PROMPT, promptMsg);
-    } else {
-      return await stepContext.next(false);
     }
+    return await stepContext.next(false);
   }
 
   /**
@@ -87,23 +85,24 @@ class GetAndSendEmailStep extends ComponentDialog {
     const unblockBotDetails = stepContext.options;
 
     // Result has come through
-    if (stepContext.result) {
-      const confirmMsg = i18n.__("getAndSendEmailStepConfirmMsg");
-
-      await stepContext.context.sendActivity(confirmMsg);
-
-      return await stepContext.endDialog(unblockBotDetails);
+    const results = stepContext.result;
+    if (results) {
+      const re =
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      // Email validation
+      if (re.test(String(results).toLowerCase())) {
+        const confirmMsg = i18n.__("getAndSendEmailStepConfirmMsg");
+        await stepContext.context.sendActivity(confirmMsg);
+        return await stepContext.endDialog(unblockBotDetails);
+      } else {
+        unblockBotDetails.getAndSendEmailStep = -1;
+        unblockBotDetails.errorCount.getAndSendEmailStep++;
+      }
     }
-    // No result provided
-    else {
-      unblockBotDetails.getAndSendEmailStep = -1;
-      unblockBotDetails.errorCount.getAndSendEmailStep++;
-
-      return await stepContext.replaceDialog(
-        GET_AND_SEND_EMAIL_STEP,
-        unblockBotDetails
-      );
-    }
+    return await stepContext.replaceDialog(
+      GET_AND_SEND_EMAIL_STEP,
+      unblockBotDetails
+    );
   }
 }
 
