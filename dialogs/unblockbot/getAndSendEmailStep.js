@@ -91,11 +91,10 @@ class GetAndSendEmailStep extends ComponentDialog {
                 await stepContext.context.sendActivity(confirmMsg);
                 return await stepContext.endDialog(unblockBotDetails);
             }
-        }
-        // No result provided
-        else {
-            unblockBotDetails.getAndSendEmailStep = -1;
-            unblockBotDetails.errorCount.getAndSendEmailStep++;
+            else {
+                unblockBotDetails.getAndSendEmailStep = -1;
+                unblockBotDetails.errorCount.getAndSendEmailStep++;
+            }
         }
         return await stepContext.replaceDialog(GET_AND_SEND_EMAIL_STEP, unblockBotDetails);
     }
