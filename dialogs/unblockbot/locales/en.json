@@ -25,7 +25,7 @@
     "confirmSendEmailStepCloseMsg": "Ok, no problem. I'll be here if you need me!",
 
     "getAndSendEmailStepStandardMsg": "Ok, what email address should I send it to?",
-    "getAndSendEmailStepRetryMsg": "Sorry, do you want me to send an email to your former employer?",
+    "getAndSendEmailStepRetryMsg": "Invalid e-mail format, please try again.",
     "getAndSendEmailStepConfirmMsg": "Ok, email sent!",
 
     "confirmNotifyROEReceivedStepStandardMsg": "Do you want me to notify you when we’ve received the Record of Employment?",
