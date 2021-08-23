@@ -22,7 +22,7 @@
   "confirmSendEmailStepCloseMsg": "Ok, no problem. I'll be here if you need me!",
 
   "getAndSendEmailStepStandardMsg": "Ok, what email address should I send it to?",
-  "getAndSendEmailStepRetryMsg": "Invalid e-mail format, please try again.",
+  "getAndSendEmailStepRetryMsg": "Humm, seems like the email provieded is invalid. Can you please try again?",
   "getAndSendEmailStepConfirmMsg": "Ok, email sent!",
 
   "confirmNotifyROEReceivedStepStandardMsg": "Do you want me to notify you when we’ve received the Record of Employment?",
