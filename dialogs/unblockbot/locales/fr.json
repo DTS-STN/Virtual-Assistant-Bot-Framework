@@ -12,7 +12,7 @@
   "confirmLookIntoStepCloseMsg": "D'accord, pas de problème. Dites-le-moi si vous changez d'avis!",
 
   "getAndSendEmailStepStandardMsg": "D'accord, à quelle adresse de courrier électronique dois-je l'envoyer?",
-  "getAndSendEmailStepRetryMsg": "Format d'e-mail non valide, veuillez réessayer.",
+  "getAndSendEmailStepRetryMsg": "Humm, il semble que l'email fourni n'est pas valide. Pouvez-vous réessayer?",
   "getAndSendEmailStepConfirmMsg": "D'accord, c'est envoyé!",
 
   "confirmSendEmailStepStandardMsg": "Je vois que vous avez rempli votre demande le 12 février et que la demande elle-même semble bonne. Cependant, nous n'avons toujours pas reçu de relevé d'emploi de votre ancien employeur, Initech.",
