@@ -60,7 +60,7 @@ class ConfirmNotifyROEReceivedStep extends ComponentDialog {
       unblockBotDetails.masterError = true;
 
       // Set master error message to send
-      const errorMsg = i18n.__("confirmNotifyROEReceivedStepErrorMsg");
+      const errorMsg = i18n.__("masterErrorMsg");
 
       // Send master error message
       await stepContext.context.sendActivity(errorMsg);

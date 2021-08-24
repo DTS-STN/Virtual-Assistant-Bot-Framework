@@ -67,7 +67,7 @@ class ConfirmSendEmailStep extends ComponentDialog {
       unblockBotDetails.masterError = true;
 
       // Set error message to send
-      const errorMsg = i18n.__("confirmSendEmailStepErrorMsg");
+      const errorMsg = i18n.__("masterErrorMsg");
 
       // Send error message
       await stepContext.context.sendActivity(errorMsg);

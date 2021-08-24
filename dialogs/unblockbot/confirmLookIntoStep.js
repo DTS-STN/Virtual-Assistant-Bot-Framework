@@ -63,7 +63,7 @@ class ConfirmLookIntoStep extends ComponentDialog {
       unblockBotDetails.masterError = true;
 
       // Set master error message to send
-      const errorMsg = i18n.__("confirmLookIntoStepErrorMsg");
+      const errorMsg = i18n.__("masterErrorMsg");
 
       // Send master error message
       await stepContext.context.sendActivity(errorMsg);
