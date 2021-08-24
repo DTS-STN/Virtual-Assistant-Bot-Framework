@@ -122,7 +122,7 @@ class UnblockBotDialog extends ComponentDialog {
     // console.log('DEBUG: confirmSendEmailStep:', unblockBotDetails);
 
     // Check if a master error occured and then end the dialog
-    if (unblockBotDetails.masterError === true) {
+    if (unblockBotDetails.masterError) {
       return await stepContext.endDialog(unblockBotDetails);
     } else {
       // If no master error occured continue on
@@ -168,7 +168,7 @@ class UnblockBotDialog extends ComponentDialog {
     // console.log('DEBUG: getAndSendEmailStep:', unblockBotDetails, stepContext.result);
 
     // Check if a master error occured and then end the dialog
-    if (unblockBotDetails.masterError === true) {
+    if (unblockBotDetails.masterError) {
       return await stepContext.endDialog(unblockBotDetails);
     } else {
       // If no master error occured continue on
@@ -217,33 +217,36 @@ class UnblockBotDialog extends ComponentDialog {
 
     // DEBUG
     // console.log('DEBUG: getAndSendEmailStep:', unblockBotDetails, stepContext.result);
+    if (unblockBotDetails.masterError) {
+      return await stepContext.endDialog(unblockBotDetails);
+    } else {
+      switch (unblockBotDetails.confirmNotifyROEReceivedStep) {
+        // The confirmNotifyROEReceivedStep flag in the state machine isn't set
+        // so we are sending the user to that step
+        case null:
+          // ADD CHECKS TO SEE IF THE FIRST THREE STEPS ARE TRUE
+          // IF ANY STEPS WERE FALSE OR ANYTHING ELSE THAN JUST END DIALOG
+          return await stepContext.beginDialog(
+            CONFIRM_NOTIFY_ROE_RECEIVED_STEP,
+            unblockBotDetails
+          );
 
-    switch (unblockBotDetails.confirmNotifyROEReceivedStep) {
-      // The confirmNotifyROEReceivedStep flag in the state machine isn't set
-      // so we are sending the user to that step
-      case null:
-        // ADD CHECKS TO SEE IF THE FIRST THREE STEPS ARE TRUE
-        // IF ANY STEPS WERE FALSE OR ANYTHING ELSE THAN JUST END DIALOG
-        return await stepContext.beginDialog(
-          CONFIRM_NOTIFY_ROE_RECEIVED_STEP,
-          unblockBotDetails
-        );
+        // The confirmNotifyROEReceivedStep flag in the state machine is set to true
+        // so we are sending the user to next step
+        case true:
+          // console.log('DEBUG', unblockBotDetails);
+          return await stepContext.next(unblockBotDetails);
 
-      // The confirmNotifyROEReceivedStep flag in the state machine is set to true
-      // so we are sending the user to next step
-      case true:
-        // console.log('DEBUG', unblockBotDetails);
-        return await stepContext.next(unblockBotDetails);
+        // The confirmNotifyROEReceivedStep flag in the state machine is set to false
+        // so we are sending to the end because they need to hit the next step
+        case false:
+          // code block
+          return await stepContext.endDialog(unblockBotDetails);
 
-      // The confirmNotifyROEReceivedStep flag in the state machine is set to false
-      // so we are sending to the end because they need to hit the next step
-      case false:
-        // code block
-        return await stepContext.endDialog(unblockBotDetails);
-
-      // Default catch all but we should never get here
-      default:
-        return await stepContext.endDialog(unblockBotDetails);
+        // Default catch all but we should never get here
+        default:
+          return await stepContext.endDialog(unblockBotDetails);
+      }
     }
   }
 
@@ -299,8 +302,8 @@ class UnblockBotDialog extends ComponentDialog {
     // console.log('DEBUG DETAILS: ', unblockBotDetails);
 
     // Check if a master error has occured
-    if (unblockBotDetails.masterError === true) {
-      const masterErrorMsg = i18n.__("unblockBotDialogMasterErrorMsg");
+    if (unblockBotDetails.masterError) {
+      const masterErrorMsg = i18n.__("masterErrorMsg");
 
       await stepContext.context.sendActivity(masterErrorMsg);
     }

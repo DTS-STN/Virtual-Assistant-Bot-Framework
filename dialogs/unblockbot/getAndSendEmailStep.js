@@ -50,6 +50,12 @@ class GetAndSendEmailStep extends ComponentDialog {
     if (unblockBotDetails.errorCount.getAndSendEmailStep >= MAX_ERROR_COUNT) {
       // Throw the master error flag
       unblockBotDetails.masterError = true;
+
+      const errorMsg = i18n.__("masterErrorMsg");
+
+      // Send master error message
+      await stepContext.context.sendActivity(errorMsg);
+
       // End the dialog and pass the updated details state machine
       return await stepContext.endDialog(unblockBotDetails);
     }
