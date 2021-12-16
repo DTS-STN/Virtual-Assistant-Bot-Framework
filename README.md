@@ -1,8 +1,11 @@
-# echo-bot
+# Virtual Assistant Bot Framework
 
-Bot Framework v4 echo bot sample
+Bot Framework v4
 
 This bot has been created using [Bot Framework](https://dev.botframework.com), it shows how to create a simple bot that accepts input from the user and echoes it back.
+
+Detailed [documentation can be found in the wiki](https://github.com/DTS-STN/Virtual-Assistant-Bot-Framework/wiki).
+
 
 ## Prerequisites
 
